@@ -1,46 +1,135 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minha Imagem</title>
 
-<style>
-body{
-    margin:0;
-        background:#111;
-            display:flex;
-                justify-content:center;
-                    align-items:center;
-                        height:100vh;
-                            font-family:Arial, sans-serif;
-                            }
+<DOCTYPE html>
 
-                            .container{
-                                text-align:center;
-                                }
+    <html lang="pt-br">
+        <head>
 
-                                img{
-                                    max-width:90%;
-                                        height:auto;
-                                            border-radius:15px;
-                                                box-shadow:0 0 20px rgba(0,0,0,0.5);
-                                                }
+        <meta charset="UTF-8">
+        <meta name="vieweport" content="width=devide-width, initial-scale=1.0">
 
-                                                h1{
-                                                    color:white;
-                                                    }
-                                                    </style>
+        <title>Jogo da Cobrinha</title>
 
-                                                    </head>
-                                                    <body>
+        <style>
 
-                                                    <div class="container">
-                                                    <h1>Minha Foto</h1>
+        .container { 
+            text-align: center;
+            background-color: #08519c;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 30px 10px 30px rgb(#000000);
+        }
 
-                                                    <img src="imagem.jpg" alt="foto">
+        .info { 
 
-                                                    </div>
+        font-size: 1em;
 
-                                                    </body>
-                                                    </html>
+        }
+
+        .pontuacao {
+
+            font-weight:bold;
+            color:rgb(0, 0, 0);
+        }
+
+        .recorde{
+            font-weight:bold;
+            color:rgb(0, 0, 0);
+        }
+
+        #canvas{
+            border: 3px solid #333;
+            border-radius: 10px;
+            background-color:#b8860b;
+            display: block;
+
+            margin: 20px auto;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+        }
+
+        .controles{
+            margin-top: 20px;
+
+        }
+
+        button{
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d6a332;
+
+            padding: 12px 25px;
+            color:#000000;
+            border: 3px black;
+            border-radius: 8px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .teclas{
+            display:grid;
+            grid-template-columns: repeat(3, 50px);
+            gap: 5px;
+            justify-content: center;
+            margin: 15px auto;
+
+        }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1> &#128013; Jogo da cobrinha</h1>
+            
+            <div class="info">
+
+                <div class="pontuacao">
+                    pontuação: 0 <span id="pontos"> (0) </span>
+                </div>
+                <div class="recorde">
+                    Recorde: 0   <span id="recorde"> (0) </span>
+                </div>
+            </div>
+
+            <canvas id="canvas" width="400" height="400"> 
+        <!--E um elemento especial para desenho 2D ou 3D. Por so só,
+         é apenas um retangulo vazio. o JAVASCRIPT vai usar o "contexto 2D"
+          para desenhar a cobra, a comifa etc...-->
+
+
+                
+
+            </canvas>
+
+            <div> 
+
+            <button onclick="iniciarJogo()">Iniciar jogo</button>
+            <button onclick="pausarJogo()" >Pausar / continuar</button>           
+
+
+            </div>
+
+            <div class="teclas">
+
+                 <div class="tecla vazia"></div>
+                 <div>&#9650;             </div>
+                 <div class="tecla vazia"></div>
+                 <div>&#9668;</div>
+                 <div>&#9660;</div>
+                 <div>&#9658;</div>
+
+            </div>
+
+            </div>     
+        
+            <script>
+
+            function iniciarJogo(){
+                console.log("Jogo começou!!!");
+            }
+
+            function pausarJogo(){
+                console.log("pausa no jogo!!!")
+            }
+        </script>
+    </body>
+</html>
